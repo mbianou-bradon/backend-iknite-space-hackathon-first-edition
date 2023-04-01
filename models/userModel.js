@@ -33,10 +33,10 @@ const userSchema = new mongoose.Schema({
         unique: [true, "Phone number is already exist, please enter a different number"]
     },
     location: {
-        type: String,
+        type: String, 
         required: [true, "Please Enter your Location"]
     },
-    importLicenceNumber: {
+    importLicenseNumber: {
         type: String,
     },
     role: {
@@ -46,6 +46,4 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
+module.exports = mongoose.model('User', userSchema)
