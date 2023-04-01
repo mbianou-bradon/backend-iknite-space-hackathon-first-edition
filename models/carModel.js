@@ -20,12 +20,14 @@ const carScheme = new mongoose.Schema({
     mileage: {
         type: String,
     },
+    price: {
+        type: String, 
+        required: [true, "Please Enter a price"]
+    },
     images: {
         type: Array,
         required: [true, "Please Enter at least one Image"]
     }
 })
 
-const Car = mongoose.model('Car', carScheme)
-
-export default Car;
+module.exports = mongoose.model('Car', carScheme)
