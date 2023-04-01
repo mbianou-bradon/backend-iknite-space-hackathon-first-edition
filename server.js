@@ -1,19 +1,20 @@
 require('dotenv').config()
 const express = require('express')
+const carRoutes = require('./routes/cars')
 
 // express app
 const app = express()
 
 // middleware
+app.use(express.json())
+
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
 })
 
-// route handling
-app.get('/', (req, res) => {
-    res.json({msg: "welcome to the app"})
-})
+// routes 
+app.use('/api/cars', carRoutes)
 
 // listen for requests
 app.listen(process.env.PORT, () => {
