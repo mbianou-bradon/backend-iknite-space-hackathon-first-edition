@@ -1,29 +1,21 @@
 const express = require('express')
+const { createCar, getCars, getCar, deleteCar, updateCar } = require('../controllers/carController')
+
 
 const router = express.Router()
 // GET all cars
-router.get('/', (req, res) => {
-    res.json({msg: "get all cars"})
-})
+router.get('/', getCars)
 
 // GET a single car
-router.get('/:id', (req, res) => {
-    res.json({msg: 'get a single car'})
-})
+router.get('/:id', getCar)
 
 // POST a single car
-router.post('/', (req, res) => {
-    res.json({msg: 'post a new car'})
-})
+router.post('/', createCar)
 
 // DELETE a car
-router.delete('/:id', (req, res) => {
-    res.json({msg: 'delete a new car'})
-})
+router.delete('/:id', deleteCar)
 
 // UPDATE a car
-router.patch('/:id', (req, res) => {
-    res.json({msg: 'update a new car'})
-})
+router.patch('/:id', updateCar)
 
 module.exports = router
