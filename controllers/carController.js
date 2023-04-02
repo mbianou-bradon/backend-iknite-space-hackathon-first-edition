@@ -30,11 +30,11 @@ const getCar = async (req, res) => {
 
 // create a new car
 const createCar = async (req, res) => {
-    const {name, model, engineType, fuelType, mileage, price, images} = req.body
+    const {name, model, engineType, fuelType, mileage, price, images, description} = req.body
 
     // add doc to db
     try{
-        const car = await Car.create({name, model, engineType, fuelType, mileage, price, images})
+        const car = await Car.create({name, model, engineType, fuelType, mileage, price, images, description})
         res.status(200).json(car)
     } catch (error) {
         res.status(400).json({error: error.message})
