@@ -27,6 +27,10 @@ const carScheme = new mongoose.Schema({
     images: {
         type: Array,
         required: [true, "Please Enter at least one Image"]
+    },
+    description: {
+        type: String, 
+        required: [true, "Please Enter a description"]
     }
 })
 
