@@ -3,9 +3,18 @@ const express = require("express");
 const mongoose = require("mongoose");
 const carRoutes = require("./routes/cars");
 const userRoutes = require("./routes/users");
+const cors = require("cors");
 
 // express app
 const app = express();
+
+// cors bypassed
+app.use(
+  cors({
+    origin: "localhost:3000/",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  })
+);
 
 // middleware
 app.use(express.json());
