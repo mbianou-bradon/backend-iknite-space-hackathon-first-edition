@@ -9,12 +9,12 @@ const cors = require("cors");
 const app = express();
 
 // cors bypassed
-app.use(
-  cors({
-    origin: "https://iknite-motors.onrender.com",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://iknite-motors.onrender.com",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   })
+// );
 
 // middleware
 app.use(express.json());
