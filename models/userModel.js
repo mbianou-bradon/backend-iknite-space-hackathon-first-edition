@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
         }
     },
     contact: {
-        type: Number,
+        type: String,
         required: [true, "Enter your phone number"],
         unique: [true, "Phone number is already exist, please enter a different number"]
     },
