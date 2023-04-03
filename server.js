@@ -11,7 +11,7 @@ const app = express();
 // cors bypassed
 app.use(
   cors({
-    origin: "localhost:3000/",
+    origin: "https://iknite-motors.onrender.com",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
